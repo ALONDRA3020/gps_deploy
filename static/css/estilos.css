@@ -528,6 +528,8 @@ button:disabled {
     border: 0;
     border-radius: 20px;
     box-shadow: var(--shadow);
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .zone-dialog::backdrop {
@@ -537,6 +539,20 @@ button:disabled {
 
 .zone-dialog form {
     padding: 20px;
+}
+
+.zone-dialog label,
+.zone-dialog .dialog-header h2,
+.zone-dialog .eyebrow,
+.zone-dialog .small-text {
+    color: #f8fafc;
+}
+
+.zone-dialog input,
+.zone-dialog textarea {
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
 .dialog-header {

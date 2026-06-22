@@ -13,7 +13,7 @@
     "description": "Sector de alta densidad con disputas por control territorial y redes de extorsion.",
     "lat": 16.8919,
     "lng": -99.8239,
-    "radius_m": 1600
+    "radius_m": 1600.0
   },
   {
     "id": "gro-acapulco-emiliano-zapata",
@@ -28,7 +28,7 @@
     "description": "Zona prioritaria por enfrentamientos recurrentes y coaccion economica sobre comercios.",
     "lat": 16.8981,
     "lng": -99.8339,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "gro-acapulco-progreso",
@@ -43,7 +43,7 @@
     "description": "Corredor comercial con reportes de extorsion y robos violentos.",
     "lat": 16.8585,
     "lng": -99.8955,
-    "radius_m": 1100
+    "radius_m": 1100.0
   },
   {
     "id": "gro-acapulco-el-coloso",
@@ -58,7 +58,7 @@
     "description": "Conjunto habitacional expuesto a disputas de pandillas y grupos criminales.",
     "lat": 16.8333,
     "lng": -99.8167,
-    "radius_m": 1400
+    "radius_m": 1400.0
   },
   {
     "id": "gro-acapulco-la-laja",
@@ -73,7 +73,7 @@
     "description": "Zona de laderas y accesos complejos que dificultan la vigilancia.",
     "lat": 16.8615,
     "lng": -99.8851,
-    "radius_m": 1000
+    "radius_m": 1000.0
   },
   {
     "id": "gro-acapulco-jardin-mangos",
@@ -88,7 +88,7 @@
     "description": "Area vulnerable del poniente con violencia ligada a delincuencia organizada.",
     "lat": 16.8845,
     "lng": -99.9575,
-    "radius_m": 1200
+    "radius_m": 1200.0
   },
   {
     "id": "gro-acapulco-carabali",
@@ -103,7 +103,7 @@
     "description": "Zona critica por incremento de hechos violentos y homicidios.",
     "lat": 16.8672,
     "lng": -99.8992,
-    "radius_m": 900
+    "radius_m": 900.0
   },
   {
     "id": "gro-acapulco-centro",
@@ -118,7 +118,7 @@
     "description": "Zona turistica y comercial con extorsion, cierres de negocios y ataques armados.",
     "lat": 16.8494,
     "lng": -99.9088,
-    "radius_m": 1000
+    "radius_m": 1000.0
   },
   {
     "id": "gro-chilpancingo-los-angeles",
@@ -133,7 +133,7 @@
     "description": "Foco rojo prioritario en el sector oriente de la ciudad.",
     "lat": 17.5575,
     "lng": -99.491,
-    "radius_m": 1100
+    "radius_m": 1100.0
   },
   {
     "id": "gro-chilpancingo-obrera",
@@ -148,7 +148,7 @@
     "description": "Sector poniente con reportes constantes de asaltos y robos violentos.",
     "lat": 17.562,
     "lng": -99.5085,
-    "radius_m": 1050
+    "radius_m": 1050.0
   },
   {
     "id": "gro-chilpancingo-pri",
@@ -163,7 +163,7 @@
     "description": "Zona vulnerable por barrancas, areas oscuras y despojo vehicular.",
     "lat": 17.5455,
     "lng": -99.518,
-    "radius_m": 1100
+    "radius_m": 1100.0
   },
   {
     "id": "gro-chilpancingo-el-amate",
@@ -178,7 +178,7 @@
     "description": "Colonia del norte considerada critica por enfrentamientos asociados al narcomenudeo.",
     "lat": 17.578,
     "lng": -99.502,
-    "radius_m": 1100
+    "radius_m": 1100.0
   },
   {
     "id": "gro-iguala-san-jose",
@@ -193,7 +193,7 @@
     "description": "Sector con balaceras y atentados directos de alto impacto.",
     "lat": 18.3485,
     "lng": -99.529,
-    "radius_m": 1100
+    "radius_m": 1100.0
   },
   {
     "id": "gro-iguala-capire",
@@ -208,7 +208,7 @@
     "description": "Foco rojo periferico con hallazgos de victimas de ejecuciones.",
     "lat": 18.337,
     "lng": -99.544,
-    "radius_m": 1100
+    "radius_m": 1100.0
   },
   {
     "id": "gro-iguala-centro",
@@ -223,7 +223,7 @@
     "description": "Corredor comercial bajo presion de delincuencia organizada.",
     "lat": 18.3435,
     "lng": -99.5375,
-    "radius_m": 1000
+    "radius_m": 1000.0
   },
   {
     "id": "gro-iguala-el-naranjo",
@@ -238,7 +238,7 @@
     "description": "Localidad rural periferica identificada como punto de riesgo.",
     "lat": 18.305,
     "lng": -99.723,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "mex-ecatepec-ciudad-cuauhtemoc",
@@ -253,7 +253,7 @@
     "description": "Zona prioritaria por marginacion, violencia intrafamiliar y agresiones de genero.",
     "lat": 19.605,
     "lng": -99.006,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "mex-ecatepec-jardines-morelos",
@@ -268,7 +268,7 @@
     "description": "Barrio prioritario por crimenes violentos de genero y asaltos.",
     "lat": 19.596,
     "lng": -99.015,
-    "radius_m": 1400
+    "radius_m": 1400.0
   },
   {
     "id": "mex-ecatepec-las-americas",
@@ -283,7 +283,7 @@
     "description": "Zona habitacional y vial con alta incidencia de robo vehicular violento.",
     "lat": 19.598,
     "lng": -99.032,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "mex-ecatepec-hank-gonzalez",
@@ -298,7 +298,7 @@
     "description": "Sector periferico con problemas de iluminacion y vigilancia.",
     "lat": 19.551,
     "lng": -99.055,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "mex-ecatepec-chiconautla",
@@ -313,7 +313,7 @@
     "description": "Sector prioritario por delincuencia organizada y atracos a comercios.",
     "lat": 19.613,
     "lng": -99.018,
-    "radius_m": 1400
+    "radius_m": 1400.0
   },
   {
     "id": "mex-ecatepec-santa-clara",
@@ -328,7 +328,7 @@
     "description": "Zona industrial y comercial con robo a transeuntes y vehiculos.",
     "lat": 19.563,
     "lng": -99.066,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "gua-celaya-san-miguel-octopan",
@@ -343,7 +343,7 @@
     "description": "Foco rojo rural con confrontaciones armadas y ataques contra locales.",
     "lat": 20.5741,
     "lng": -100.7477,
-    "radius_m": 1700
+    "radius_m": 1700.0
   },
   {
     "id": "gua-celaya-santa-rita",
@@ -358,7 +358,7 @@
     "description": "Sector urbano conflictivo con agresiones armadas e incendios intencionales.",
     "lat": 20.542,
     "lng": -100.825,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "gua-leon-brisas-campestre",
@@ -373,7 +373,7 @@
     "description": "Colonia identificada como una de las zonas delictivas prioritarias del Bajio.",
     "lat": 21.165,
     "lng": -101.761,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "sin-culiacan-alturas-sur",
@@ -388,7 +388,7 @@
     "description": "Complejo habitacional con alta incidencia de violencia y robos a propiedad.",
     "lat": 24.761,
     "lng": -107.362,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "sin-culiacan-centro",
@@ -403,7 +403,7 @@
     "description": "Nucleo economico expuesto a robos de vehiculos y comercios.",
     "lat": 24.808,
     "lng": -107.394,
-    "radius_m": 1200
+    "radius_m": 1200.0
   },
   {
     "id": "sin-culiacan-21-marzo",
@@ -418,7 +418,7 @@
     "description": "Zona con violencia armada y ataques directos en via publica.",
     "lat": 24.781,
     "lng": -107.368,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "sin-culiacan-el-ranchito",
@@ -433,7 +433,7 @@
     "description": "Foco rojo periferico utilizado para abandono de victimas.",
     "lat": 24.731,
     "lng": -107.355,
-    "radius_m": 1600
+    "radius_m": 1600.0
   },
   {
     "id": "sin-culiacan-barrancos",
@@ -448,7 +448,7 @@
     "description": "Sector habitacional con robos violentos y agresiones familiares.",
     "lat": 24.755,
     "lng": -107.425,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "bc-tijuana-camino-verde",
@@ -463,7 +463,7 @@
     "description": "Colonia de topografia compleja con violencia ligada al control de puntos de droga.",
     "lat": 32.482,
     "lng": -116.985,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "bc-tijuana-centro",
@@ -478,7 +478,7 @@
     "description": "Distrito turistico y comercial con asaltos y rinas violentas.",
     "lat": 32.533,
     "lng": -117.038,
-    "radius_m": 1200
+    "radius_m": 1200.0
   },
   {
     "id": "bc-tijuana-sanchez-taboada",
@@ -493,7 +493,7 @@
     "description": "Sector periferico con alta incidencia de homicidio doloso.",
     "lat": 32.468,
     "lng": -116.982,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "bc-tijuana-zona-norte",
@@ -508,7 +508,7 @@
     "description": "Colonia fronteriza con violencia asociada a puntos de venta de droga.",
     "lat": 32.537,
     "lng": -117.042,
-    "radius_m": 1000
+    "radius_m": 1000.0
   },
   {
     "id": "bc-tijuana-lomas-taurinas",
@@ -523,7 +523,7 @@
     "description": "Zona accidentada con ataques armados en calles y viviendas.",
     "lat": 32.529,
     "lng": -117.001,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "bc-tijuana-el-soler",
@@ -538,7 +538,7 @@
     "description": "Area del poniente con pugnas por control de accesos y cobros delictivos.",
     "lat": 32.528,
     "lng": -117.062,
-    "radius_m": 1300
+    "radius_m": 1300.0
   },
   {
     "id": "pue-puebla-san-francisco-totimehuacan",
@@ -553,7 +553,7 @@
     "description": "Junta auxiliar periferica identificada como foco rojo prioritario.",
     "lat": 18.965,
     "lng": -98.158,
-    "radius_m": 1600
+    "radius_m": 1600.0
   },
   {
     "id": "pue-puebla-lomas-5-mayo",
@@ -567,7 +567,7 @@
     "description": "Barrio con presencia de bandas locales y muertes violentas.",
     "lat": 19.052,
     "lng": -98.168,
-    "radius_m": 1200
+    "radius_m": 1200.0
   },
   {
     "id": "pue-puebla-san-pablo-xochimehuacan",
@@ -582,7 +582,7 @@
     "description": "Junta auxiliar afectada por bandas delictivas y violencia letal.",
     "lat": 19.083,
     "lng": -98.204,
-    "radius_m": 1500
+    "radius_m": 1500.0
   },
   {
     "id": "pue-puebla-santa-cruz-buenavista",
@@ -597,7 +597,7 @@
     "description": "Foco rojo metropolitano con robos violentos a peatones y transporte.",
     "lat": 19.062,
     "lng": -98.253,
-    "radius_m": 1200
+    "radius_m": 1200.0
   },
   {
     "id": "manual-b81c8b47f397",
@@ -611,5 +611,16 @@
     "lat": 19.7940639,
     "lng": -99.8791596,
     "radius_m": 1000.0
+  },
+  {
+    "id": "1ccd1499-5e26-40a2-bc06-fd5961f8768e",
+    "name": "GC2G+37 Santa Elena",
+    "municipality": "Santa Elena",
+    "state": "Durango",
+    "risks": [],
+    "description": "",
+    "lat": 23.500234660923024,
+    "lng": -104.574284375,
+    "radius_m": 500.0
   }
 ]

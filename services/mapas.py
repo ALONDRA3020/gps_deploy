@@ -150,6 +150,20 @@ def _resumen_peajes(ruta):
     }
 
 
+def _ruta_terrestre(ruta):
+    if ruta.get("travelMode", "DRIVE") != "DRIVE":
+        return False
+
+    for tramo in ruta.get("legs", []):
+        for paso in tramo.get("steps", []) or []:
+            if paso.get("travelMode") and paso.get("travelMode") != "DRIVE":
+                return False
+            instruccion = str(paso.get("maneuver", "") or paso.get("instruction", "")).lower()
+            if "ferry" in instruccion or "barco" in instruccion or "transbordador" in instruccion:
+                return False
+    return True
+
+
 def _valores_vehiculo(tipo_vehiculo):
     solicitado = str(tipo_vehiculo or "GASOLINE").strip().upper()
     if solicitado not in {"GASOLINE", "TRUCK"}:
@@ -210,6 +224,9 @@ def calcular_rutas_google(origen, destino, tipo_vehiculo, clave_api, tiempo_espe
 
     rutas = []
     for indice, ruta in enumerate(respuesta.json().get("routes", [])):
+        if not _ruta_terrestre(ruta):
+            continue
+
         distancia_m = int(ruta.get("distanceMeters", 0) or 0)
         duracion_s = _duracion_segundos(ruta.get("duration", "0s"))
         peaje = _resumen_peajes(ruta)

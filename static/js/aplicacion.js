@@ -193,7 +193,10 @@ function limpiarDestino() {
 function limpiarTodo() {
     limpiarOrigen();
     limpiarDestino();
+    porId("entradaRendimiento").value = porId("entradaRendimiento").defaultValue || "";
     porId("panelResultados").classList.add("hidden");
+    porId("panelPeajes").classList.add("hidden");
+    porId("listaPeajes").innerHTML = "";
     ocultarMensaje();
 }
 
