@@ -53,6 +53,7 @@ def geocodificar(direccion, clave_api, tiempo_espera=35):
     contenido = respuesta.json()
 
     if contenido.get("status") != "OK" or not contenido.get("results"):
+        print("RESPUESTA GEPCODING:", contenido)
         detalle = contenido.get("error_message") or contenido.get("status") or "sin resultados"
         raise ErrorGoogleMaps(f"No se encontró la dirección: {detalle}.")
 
@@ -275,6 +276,7 @@ def calcular_viaje(
         (punto["lat"], punto["lng"])
         for punto in analisis_ruta["coordinates"]
     ]
+    puntos_ruta=puntos_ruta[::10]
 
     peajes, fuente_peajes = encontrar_peajes(seleccionada, clave_api, tiempo_espera)
     zonas_intersectadas = zonas_intersectan_ruta(puntos_ruta, zonas)
