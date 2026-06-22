@@ -2,6 +2,7 @@ window.GPSMapa = {
     dibujarRuta,
     limpiarRuta,
     enfocarPosicion,
+    actualizarZonasRojas,
 };
 
 function iniciarMapa() {
@@ -160,6 +161,8 @@ function dibujarRuta(datos) {
         geodesic: true,
     });
 
+    GPS.ultimaRutaDatos = datos;
+
     GPS.posicionOrigen = {
         lat: Number(datos.origin.lat),
         lng: Number(datos.origin.lng),
@@ -176,8 +179,8 @@ function dibujarRuta(datos) {
     trayecto.forEach((punto) => limites.extend(punto));
     GPS.mapa.fitBounds(limites, 55);
 
-    if (datos.has_red_zones && !GPS.zonasVisibles) {
-        window.GPSZonas?.mostrar();
+    if (GPS.zonasVisibles) {
+        dibujarSegmentosZonasRojas(datos.red_zones || [], trayecto);
     }
 }
 
@@ -210,11 +213,138 @@ function dibujarMarcadoresPeajes(peajes) {
     });
 }
 
+function _aXY(punto, latitudReferencia) {
+    const radianesLat = (punto.lat * Math.PI) / 180;
+    const radianesLng = (punto.lng * Math.PI) / 180;
+    return {
+        x: radianesLng * 6371000 * Math.cos((latitudReferencia * Math.PI) / 180),
+        y: radianesLat * 6371000,
+    };
+}
+
+function _distanciaPuntoSegmentoM(punto, inicio, fin) {
+    const latitudReferencia = (punto.lat + inicio.lat + fin.lat) / 3;
+    const puntoXY = _aXY(punto, latitudReferencia);
+    const inicioXY = _aXY(inicio, latitudReferencia);
+    const finXY = _aXY(fin, latitudReferencia);
+
+    const dx = finXY.x - inicioXY.x;
+    const dy = finXY.y - inicioXY.y;
+    const longitudCuadrada = dx * dx + dy * dy;
+    if (longitudCuadrada === 0) {
+        return Math.hypot(puntoXY.x - inicioXY.x, puntoXY.y - inicioXY.y);
+    }
+
+    const factor = Math.max(
+        0,
+        Math.min(
+            1,
+            ((puntoXY.x - inicioXY.x) * dx + (puntoXY.y - inicioXY.y) * dy) / longitudCuadrada,
+        ),
+    );
+    const xCercana = inicioXY.x + factor * dx;
+    const yCercana = inicioXY.y + factor * dy;
+    return Math.hypot(puntoXY.x - xCercana, puntoXY.y - yCercana);
+}
+
+function _segmentoIntersecaZona(inicio, fin, zona) {
+    const centroZona = { lat: Number(zona.lat), lng: Number(zona.lng) };
+    const radio = Number(zona.radius_m);
+    if (!Number.isFinite(centroZona.lat) || !Number.isFinite(centroZona.lng) || !Number.isFinite(radio)) {
+        return false;
+    }
+
+    const distanciaInicio = _distanciaPuntoSegmentoM(centroZona, inicio, inicio);
+    const distanciaFin = _distanciaPuntoSegmentoM(centroZona, fin, fin);
+    if (distanciaInicio <= radio || distanciaFin <= radio) {
+        return true;
+    }
+    return _distanciaPuntoSegmentoM(centroZona, inicio, fin) <= radio;
+}
+
+function dibujarSegmentosZonasRojas(zonas, trayecto) {
+    limpiarSegmentosZonasRojas();
+    if (!Array.isArray(zonas) || zonas.length === 0 || trayecto.length < 2) {
+        return;
+    }
+
+    const segmentos = [];
+    let segmentoActual = [];
+
+    for (let indice = 0; indice < trayecto.length - 1; indice += 1) {
+        const inicio = trayecto[indice];
+        const fin = trayecto[indice + 1];
+        const intersecta = zonas.some((zona) => _segmentoIntersecaZona(inicio, fin, zona));
+
+        if (intersecta) {
+            if (segmentoActual.length === 0) {
+                segmentoActual.push(inicio);
+            }
+            segmentoActual.push(fin);
+            continue;
+        }
+
+        if (segmentoActual.length > 1) {
+            segmentos.push(segmentoActual);
+        }
+        segmentoActual = [];
+    }
+    if (segmentoActual.length > 1) {
+        segmentos.push(segmentoActual);
+    }
+
+    segmentos.forEach((rutaParcial) => {
+        const lineaRoja = new google.maps.Polyline({
+            map: GPS.mapa,
+            path: rutaParcial,
+            strokeColor: "#dc2626",
+            strokeOpacity: 0.96,
+            strokeWeight: 8,
+            geodesic: true,
+            zIndex: 5,
+        });
+        GPS.lineasZonasRojas.push(lineaRoja);
+    });
+}
+
+function limpiarSegmentosZonasRojas() {
+    GPS.lineasZonasRojas.forEach((linea) => linea.setMap(null));
+    GPS.lineasZonasRojas = [];
+}
+
+function obtenerTrayectoActual() {
+    if (GPS.lineaRuta) {
+        return GPS.lineaRuta.getPath().getArray().map((latLng) => ({
+            lat: latLng.lat(),
+            lng: latLng.lng(),
+        }));
+    }
+    return (GPS.ultimaRutaDatos?.coordinates || [])
+        .map((punto) => ({ lat: Number(punto.lat), lng: Number(punto.lng) }))
+        .filter((punto) => Number.isFinite(punto.lat) && Number.isFinite(punto.lng));
+}
+
+function actualizarZonasRojas() {
+    if (!GPS.ultimaRutaDatos) {
+        limpiarSegmentosZonasRojas();
+        return;
+    }
+    if (GPS.zonasVisibles) {
+        dibujarSegmentosZonasRojas(
+            GPS.ultimaRutaDatos.red_zones || [],
+            obtenerTrayectoActual(),
+        );
+    } else {
+        limpiarSegmentosZonasRojas();
+    }
+}
+
 function limpiarRuta() {
     if (GPS.lineaRuta) {
         GPS.lineaRuta.setMap(null);
         GPS.lineaRuta = null;
     }
+    limpiarSegmentosZonasRojas();
     GPS.marcadoresRuta.forEach((marcador) => marcador.setMap(null));
     GPS.marcadoresPeajes.forEach((marcador) => marcador.setMap(null));
     GPS.marcadoresRuta = [];

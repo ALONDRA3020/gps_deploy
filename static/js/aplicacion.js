@@ -6,6 +6,7 @@ window.GPS = {
     posicionOrigen: null,
     posicionDestino: null,
     lineaRuta: null,
+    lineasZonasRojas: [],
     marcadoresRuta: [],
     marcadoresPeajes: [],
     zonas: [],

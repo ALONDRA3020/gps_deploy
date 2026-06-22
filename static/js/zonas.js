@@ -26,6 +26,7 @@ function mostrarZonas() {
     porId("botonAlternarZonas").classList.add("active");
     porId("botonAlternarZonas").textContent = "Ocultar zonas rojas";
     dibujarZonas();
+    window.GPSMapa?.actualizarZonasRojas();
 }
 
 function ocultarZonas() {
@@ -33,6 +34,7 @@ function ocultarZonas() {
     porId("botonAlternarZonas").classList.remove("active");
     porId("botonAlternarZonas").textContent = "Mostrar zonas rojas";
     limpiarCapasZonas();
+    window.GPSMapa?.actualizarZonasRojas();
 }
 
 function dibujarZonas() {

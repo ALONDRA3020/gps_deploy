@@ -182,6 +182,7 @@ def calcular_rutas_google(origen, destino, tipo_vehiculo, clave_api, tiempo_espe
         "extraComputations": ["TOLLS"],
         "routeModifiers": {
             "avoidTolls": False,
+            "avoidFerries": True,
             "vehicleInfo": {"emissionType": tipo_emision},
         },
     }
